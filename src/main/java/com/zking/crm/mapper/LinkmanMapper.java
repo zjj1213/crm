@@ -1,7 +1,9 @@
 package com.zking.crm.mapper;
 
 import com.zking.crm.model.Linkman;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface LinkmanMapper {
     int deleteByPrimaryKey(Long lkmId);
 
