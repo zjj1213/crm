@@ -34,6 +34,31 @@
     from cst_service
     where svr_id = #{svrId,jdbcType=BIGINT}
   </select>
+
+  <select id="listStatus1"  >
+    select
+    <include refid="Base_Column_List" />
+    from cst_service
+    where svr_status = '新创建'
+  </select>
+  <select id="listStatus2"  >
+    select
+    <include refid="Base_Column_List" />
+    from cst_service
+    where svr_status = '已分配'
+  </select>
+  <select id="listStatus3"  >
+    select
+    <include refid="Base_Column_List" />
+    from cst_service
+    where svr_status = '已处理'
+  </select>
+  <select id="listStatus4"  >
+    select
+    <include refid="Base_Column_List" />
+    from cst_service
+    where svr_status = '已归档'
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from cst_service
     where svr_id = #{svrId,jdbcType=BIGINT}
