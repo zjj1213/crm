@@ -14,4 +14,6 @@ public interface TreeNodeMapper {
     int updateByPrimaryKeySelective(TreeNode record);
 
     int updateByPrimaryKey(TreeNode record);
+
+    TreeNode list(TreeNode record);
 }

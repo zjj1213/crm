@@ -20,6 +20,24 @@
     from t_sys_tree_node
     where tree_node_id = #{treeNodeId,jdbcType=INTEGER}
   </select>
+
+  <select id="list" resultMap="BaseResultMap" parameterType="com.zking.crm.model.TreeNode" >
+    select
+    <include refid="Base_Column_List" />
+    from t_sys_tree_node
+    where 1=1
+    <if test="parent_node_id == null" >
+       and parent_node_id is null
+    </if>
+    <if test="new Integer(-1) == parent_node_id" >
+      and parent_node_id is null
+    </if>
+    if(null==treeNode.getParentNodeId()||new Integer(-1).equals(treeNode.getParentNodeId())){
+    sql +=" and parent_node_id is null";//查询一级节点
+    }else{//查询指定节点的子节点
+    sql +=" and parent_node_id ="+treeNode.getParentNodeId();
+    }
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_sys_tree_node
     where tree_node_id = #{treeNodeId,jdbcType=INTEGER}
