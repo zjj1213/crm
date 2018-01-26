@@ -288,4 +288,33 @@ public class Customer {
     public void setCustStatus(String custStatus) {
         this.custStatus = custStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "custNo='" + custNo + '\'' +
+                ", custName='" + custName + '\'' +
+                ", custRegion='" + custRegion + '\'' +
+                ", custManagerId=" + custManagerId +
+                ", custManagerName='" + custManagerName + '\'' +
+                ", custLevel=" + custLevel +
+                ", custLevelLabel='" + custLevelLabel + '\'' +
+                ", custSatisfy=" + custSatisfy +
+                ", custCredit=" + custCredit +
+                ", custAddr='" + custAddr + '\'' +
+                ", custZip='" + custZip + '\'' +
+                ", custTel='" + custTel + '\'' +
+                ", custFax='" + custFax + '\'' +
+                ", custWebsite='" + custWebsite + '\'' +
+                ", custLicenceNo='" + custLicenceNo + '\'' +
+                ", custChieftain='" + custChieftain + '\'' +
+                ", custBankroll=" + custBankroll +
+                ", custTurnover=" + custTurnover +
+                ", custBank='" + custBank + '\'' +
+                ", custBankAccount='" + custBankAccount + '\'' +
+                ", custLocalTaxNo='" + custLocalTaxNo + '\'' +
+                ", custNationalTaxNo='" + custNationalTaxNo + '\'' +
+                ", custStatus='" + custStatus + '\'' +
+                '}';
+    }
 }
