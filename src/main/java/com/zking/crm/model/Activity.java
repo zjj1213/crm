@@ -19,6 +19,11 @@ public class Activity {
 
     private String atvDesc;
 
+
+    //客户信息表
+    private  Customer customers;
+
+
     public Activity(Long atvId, String atvCustNo, String atvCustName, Date atvDate, String atvPlace, String atvTitle, String atvRemark, String atvDesc) {
         this.atvId = atvId;
         this.atvCustNo = atvCustNo;
@@ -32,6 +37,14 @@ public class Activity {
 
     public Activity() {
         super();
+    }
+
+    public Customer getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Customer customers) {
+        this.customers = customers;
     }
 
     public Long getAtvId() {
