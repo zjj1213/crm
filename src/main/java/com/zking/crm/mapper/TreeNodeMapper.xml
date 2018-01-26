@@ -11,6 +11,17 @@
       <arg column="url" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+
+  <resultMap id="row" type="com.zking.crm.model.TreeNode" >
+
+      <id column="tree_node_id" property="treeNodeId" javaType="java.lang.Integer" />
+    <result column="tree_node_name" property="treeNodeName" javaType="java.lang.String" />
+    <result column="tree_node_type" property="treeNodeType" javaType="java.lang.Integer" />
+    <result column="position" property="position" javaType="java.lang.Long" />
+    <result column="parent_node_id" property="parentNodeId" javaType="java.lang.Integer" />
+    <result column="url" property="url" javaType="java.lang.String" />
+
+  </resultMap>
   <sql id="Base_Column_List" >
     tree_node_id, tree_node_name, tree_node_type, position, parent_node_id, url
   </sql>
@@ -21,7 +32,7 @@
     where tree_node_id = #{treeNodeId,jdbcType=INTEGER}
   </select>
 
-  <select id="list" resultMap="BaseResultMap" parameterType="com.zking.crm.model.TreeNode" >
+  <select id="list" resultMap="row" parameterType="com.zking.crm.model.TreeNode" >
     select
     <include refid="Base_Column_List" />
     from t_sys_tree_node
@@ -32,11 +43,8 @@
     <if test="new Integer(-1) == parent_node_id" >
       and parent_node_id is null
     </if>
-    if(null==treeNode.getParentNodeId()||new Integer(-1).equals(treeNode.getParentNodeId())){
-    sql +=" and parent_node_id is null";//查询一级节点
-    }else{//查询指定节点的子节点
-    sql +=" and parent_node_id ="+treeNode.getParentNodeId();
-    }
+       and parent_node_id = #{parentNodeId,jdbcType=INTEGER}
+
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_sys_tree_node

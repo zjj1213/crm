@@ -1,7 +1,9 @@
 package com.zking.crm.mapper;
 
 import com.zking.crm.model.TreeNode;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TreeNodeMapper {
     int deleteByPrimaryKey(Integer treeNodeId);
 
