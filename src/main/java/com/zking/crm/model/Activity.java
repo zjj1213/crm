@@ -110,4 +110,18 @@ public class Activity {
     public void setAtvDesc(String atvDesc) {
         this.atvDesc = atvDesc;
     }
+
+    @Override
+    public String toString() {
+        return "Activity{" +
+                "atvId=" + atvId +
+                ", atvCustNo='" + atvCustNo + '\'' +
+                ", atvCustName='" + atvCustName + '\'' +
+                ", atvDate=" + atvDate +
+                ", atvPlace='" + atvPlace + '\'' +
+                ", atvTitle='" + atvTitle + '\'' +
+                ", atvRemark='" + atvRemark + '\'' +
+                ", atvDesc='" + atvDesc + '\'' +
+                '}';
+    }
 }
