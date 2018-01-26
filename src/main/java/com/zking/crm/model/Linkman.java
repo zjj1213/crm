@@ -19,6 +19,11 @@ public class Linkman {
 
     private String lkmMemo;
 
+    //客户信息表
+    private Customer customer;
+
+
+
     public Linkman(Long lkmId, String lkmCustNo, String lkmCustName, String lkmName, String lkmSex, String lkmPostion, String lkmTel, String lkmMobile, String lkmMemo) {
         this.lkmId = lkmId;
         this.lkmCustNo = lkmCustNo;
@@ -33,6 +38,14 @@ public class Linkman {
 
     public Linkman() {
         super();
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public Long getLkmId() {
