@@ -119,4 +119,19 @@ public class Linkman {
     public void setLkmMemo(String lkmMemo) {
         this.lkmMemo = lkmMemo;
     }
+
+    @Override
+    public String toString() {
+        return "Linkman{" +
+                "lkmId=" + lkmId +
+                ", lkmCustNo='" + lkmCustNo + '\'' +
+                ", lkmCustName='" + lkmCustName + '\'' +
+                ", lkmName='" + lkmName + '\'' +
+                ", lkmSex='" + lkmSex + '\'' +
+                ", lkmPostion='" + lkmPostion + '\'' +
+                ", lkmTel='" + lkmTel + '\'' +
+                ", lkmMobile='" + lkmMobile + '\'' +
+                ", lkmMemo='" + lkmMemo + '\'' +
+                '}';
+    }
 }
