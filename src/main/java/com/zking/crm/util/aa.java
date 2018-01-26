@@ -5,4 +5,8 @@ public class aa {
     public String toString() {
         return super.toString();
     }
+
+    public void saa() {
+
+    }
 }
