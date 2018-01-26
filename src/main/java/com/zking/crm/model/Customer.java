@@ -1,5 +1,8 @@
 package com.zking.crm.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
     private String custNo;
 
@@ -47,6 +50,15 @@ public class Customer {
 
     private String custStatus;
 
+
+    //联系人表
+    private List<Linkman> linkmanList = new ArrayList<Linkman>();
+
+    //交往记录表
+    private List<Activity> activityList = new ArrayList<Activity>();
+
+
+
     public Customer(String custNo, String custName, String custRegion, Long custManagerId, String custManagerName, Integer custLevel, String custLevelLabel, Integer custSatisfy, Integer custCredit, String custAddr, String custZip, String custTel, String custFax, String custWebsite, String custLicenceNo, String custChieftain, Long custBankroll, Long custTurnover, String custBank, String custBankAccount, String custLocalTaxNo, String custNationalTaxNo, String custStatus) {
         this.custNo = custNo;
         this.custName = custName;
@@ -75,6 +87,22 @@ public class Customer {
 
     public Customer() {
         super();
+    }
+
+    public List<Linkman> getLinkmanList() {
+        return linkmanList;
+    }
+
+    public void setLinkmanList(List<Linkman> linkmanList) {
+        this.linkmanList = linkmanList;
+    }
+
+    public List<Activity> getActivityList() {
+        return activityList;
+    }
+
+    public void setActivityList(List<Activity> activityList) {
+        this.activityList = activityList;
     }
 
     public String getCustNo() {
