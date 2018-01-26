@@ -1,12 +1,12 @@
 package com.zking.crm.biz.impl;
 
-import com.zking.crm.biz.IService;
+import com.zking.crm.biz.IServiceBiz;
 import com.zking.crm.mapper.ServiceMapper;
 import com.zking.crm.model.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @org.springframework.stereotype.Service
-public class ServiceBizImpl implements IService {
+public class ServiceBizImpl implements IServiceBiz {
     @Autowired
     private ServiceMapper serviceMapper;
     @Override
