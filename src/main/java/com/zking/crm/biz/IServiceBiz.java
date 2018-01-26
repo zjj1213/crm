@@ -2,7 +2,7 @@ package com.zking.crm.biz;
 
 import com.zking.crm.model.Service;
 
-public interface IService {
+public interface IServiceBiz {
     void addService(Service service);
 
     void delService(Service service);
