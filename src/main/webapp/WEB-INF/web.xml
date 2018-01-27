@@ -60,7 +60,7 @@
 
   <servlet>
     <servlet-name>goo</servlet-name>
-    <jsp-file>/WEB-INF/jsp/add.jsp</jsp-file>
+    <jsp-file>/WEB-INF/jsp/cust/service/add.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>goo</servlet-name>
