@@ -45,7 +45,7 @@
 	
 	function doOpenTab(text,href){
 
-	              href=contextPath+"/add";
+	              href=contextPath+href;
 
 
 
