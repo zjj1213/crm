@@ -30,7 +30,7 @@ public class TreeNodeController {
 //        Yh yh = new Yh();
 //        model.addAttribute("command", yh);
 
-        return "index";
+        return "redirect:/index2";
     }
 
     @RequestMapping("/index")
