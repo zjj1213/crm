@@ -66,4 +66,18 @@
     <servlet-name>goo</servlet-name>
     <url-pattern>/add</url-pattern>
   </servlet-mapping>
+
+
+<!--曾晶晶  客户信息-->
+  <servlet>
+    <servlet-name>zjj</servlet-name>
+    <jsp-file>/WEB-INF/jsp/cust/list.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zjj</servlet-name>
+    <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+
+
+
 </web-app>
