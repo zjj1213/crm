@@ -6,20 +6,19 @@
 <head>
     <title>CRM客户关系管理</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-    <link href="../../css/style.css" rel="stylesheet" type="text/css">
-    <script src="../../script/common.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="script/common.js"></script>
 </head>
 
 
 <body>
 <div class="page_title">客户信息管理</div>
-
-<f:form modelAttribute="customer" method="post" action="kehuxixilist">
-
-    <div class="button_bar">
+<div class="button_bar">
     <button class="common_button" onclick="help('');">帮助</button>
     <button class="common_button" onclick="reload();">查询</button>
-    </div>
+</div>
+
+<f:form modelAttribute="customer" action="kehuxixilist">
 
    <table class="query_form_table">
     <tr>
@@ -29,7 +28,8 @@
         <td><input /></td>
         <th>地区</th>
         <td>
-            <select>
+            <select name="custRegion">
+                <option>请选择...</option>
                 <option>全部</option>
                 <option>北京</option>
                 <option>华北</option>
@@ -44,7 +44,8 @@
         <td><input /></td>
         <th>客户等级</th>
         <td>
-            <select>
+            <select name="custLevelLabel">
+                <option>请选择...</option>
                 <option>全部</option>
                 <option>战略合作伙伴</option>
                 <option>合作伙伴</option>
@@ -70,30 +71,23 @@
 
     <c:forEach items="${customerList}" var="c">
         <tr>
-            <td>
-
-            </td>
+            <td class="list_data_number"></td>
+            <td class=class="list_data_text">${c.custNo}</td>
+            <td class="list_data_ltext">${c.custName}</td>
+            <td class="list_data_text">${c.custRegion}</td>
+            <td class=list_data_text>${c.custManagerName}</td>
+            <td class="list_data_text">${c.custLevelLabel}</td>
         </tr>
 
 
     </c:forEach>
 
-
-
-
     <tr>
-        <td class="list_data_number">1</td>
-        <td class="list_data_text">KH071202001</td>
-        <td class="list_data_ltext">聪海信息科技有限公司</td>
-        <td class="list_data_text">北京</td>
-        <td class="list_data_text">小明</td>
-        <td class="list_data_text">战略合作伙伴</td>
         <td class="list_data_op">
             <img onclick="to('edit.html');" title="编辑" src="../../images/bt_edit.gif" class="op_button" />
             <img onclick="to('linkman.html');" title="联系人" src="../../images/bt_linkman.gif" class="op_button" />
             <img onclick="to('activities.html');" title="交往记录" src="../../images/bt_acti.gif" class="op_button" />
             <img onclick="to('orders.html');" title="历史订单" src="../../images/bt_orders.gif" class="op_button" />
-
             <img onclick="del('“客户：聪海信息科技有限公司”');" title="删除" src="../../images/bt_del.gif" class="op_button" />
 
         </td>
