@@ -3,6 +3,8 @@ package com.zking.crm.mapper;
 import com.zking.crm.model.TreeNode;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface TreeNodeMapper {
     int deleteByPrimaryKey(Integer treeNodeId);
@@ -17,5 +19,5 @@ public interface TreeNodeMapper {
 
     int updateByPrimaryKey(TreeNode record);
 
-    TreeNode list(TreeNode record);
+    List<TreeNode> list(TreeNode record);
 }

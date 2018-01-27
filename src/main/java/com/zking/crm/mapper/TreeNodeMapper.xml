@@ -37,13 +37,14 @@
     <include refid="Base_Column_List" />
     from t_sys_tree_node
     where 1=1
-    <if test="parent_node_id == null" >
+    <if test="parentNodeId == null" >
        and parent_node_id is null
     </if>
-    <if test="new Integer(-1) == parent_node_id" >
-      and parent_node_id is null
+
+    <if test="parentNodeId != null" >
+      and parent_node_id = #{parentNodeId,jdbcType=INTEGER}
     </if>
-       and parent_node_id = #{parentNodeId,jdbcType=INTEGER}
+
 
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
