@@ -56,4 +56,14 @@
     <servlet-name>SpringMVC</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>goo</servlet-name>
+    <jsp-file>/WEB-INF/jsp/add.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>goo</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
 </web-app>
