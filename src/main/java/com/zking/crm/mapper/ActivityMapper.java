@@ -1,7 +1,9 @@
 package com.zking.crm.mapper;
 
 import com.zking.crm.model.Activity;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ActivityMapper {
     int deleteByPrimaryKey(Long atvId);
 
