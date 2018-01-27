@@ -26,11 +26,6 @@ public class CustomerController {
      }
 
      //查询客户信息
-    @RequestMapping("/toKehuxixi")
-    public String toKehuxixi(){
-         return "cust/list";
-    }
-
     @RequestMapping("/kehuxixilist")
     public String kehuxixilist(@ModelAttribute Customer customer, Model model, PageBean pageBean){
 
