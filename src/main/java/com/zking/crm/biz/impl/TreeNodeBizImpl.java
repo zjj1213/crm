@@ -6,13 +6,15 @@ import com.zking.crm.model.TreeNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TreeNodeBizImpl implements ITreeNodeBiz {
     @Autowired
     TreeNodeMapper treeNodeMapper;
 
     @Override
-    public TreeNode list(TreeNode record) {
+    public List<TreeNode> list(TreeNode record) {
         return treeNodeMapper.list(record);
     }
 }
