@@ -1,6 +1,9 @@
 package com.zking.crm.model;
 
-public class TreeNode {
+import java.io.Serializable;
+
+public class TreeNode implements Serializable{
+    private static final Integer LEAF = new Integer(2);
     private Integer treeNodeId;
 
     private String treeNodeName;
@@ -73,4 +76,9 @@ public class TreeNode {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    public boolean isLeaf() {
+        return LEAF.equals(treeNodeType);
+    }
+
 }
