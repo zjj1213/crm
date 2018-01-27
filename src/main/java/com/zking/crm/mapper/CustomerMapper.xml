@@ -99,23 +99,23 @@
    WHERE cust_Status = #{custStatus,jdbcType=CHAR}
 
     <if test="custNo != null and '' != custNo" >
-      and custNo like CONCAT(CONCAT('%',#{custNo,jdbcType=CHAR},'%'))
+      and cust_no like CONCAT('%',#{custNo,jdbcType=CHAR},'%')
     </if>
 
     <if test="custName != null and '' != custName" >
-      and custName like CONCAT(CONCAT('%',#{custName,jdbcType=VARCHAR},'%'))
+      and cust_name like CONCAT('%',#{custName,jdbcType=VARCHAR},'%')
     </if>
 
     <if test="custRegion != null and '' != custRegion" >
-     and custRegion like CONCAT(CONCAT('%',#{custRegion,jdbcType=VARCHAR},'%'))
+     and cust_region like CONCAT('%',#{custRegion,jdbcType=VARCHAR},'%')
     </if>
 
     <if test="custManagerName != null and '' != custManagerName" >
-      and custManagerName like CONCAT(CONCAT('%',#{custManagerName,jdbcType=VARCHAR},'%'))
+      and cust_manager_name like CONCAT('%',#{custManagerName,jdbcType=VARCHAR},'%')
     </if>
 
     <if test="custLevelLabel != null and '' != custLevelLabel" >
-      and custLevelLabel like CONCAT(CONCAT('%',#{custLevelLabel,jdbcType=VARCHAR},'%'))
+      and cust_level_label like CONCAT('%',#{custLevelLabel,jdbcType=VARCHAR},'%')
     </if>
 
   </select>
