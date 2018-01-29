@@ -35,25 +35,25 @@
     where svr_id = #{svrId,jdbcType=BIGINT}
   </select>
 
-  <select id="listStatus1"  >
+  <select id="listStatus1"   resultMap="BaseResultMap" >
     select
     <include refid="Base_Column_List" />
     from cst_service
     where svr_status = '新创建'
   </select>
-  <select id="listStatus2"  >
+  <select id="listStatus2"   resultMap="BaseResultMap" >
     select
     <include refid="Base_Column_List" />
     from cst_service
     where svr_status = '已分配'
   </select>
-  <select id="listStatus3"  >
+  <select id="listStatus3"   resultMap="BaseResultMap" >
     select
     <include refid="Base_Column_List" />
     from cst_service
     where svr_status = '已处理'
   </select>
-  <select id="listStatus4"  >
+  <select id="listStatus4"   resultMap="BaseResultMap" >
     select
     <include refid="Base_Column_List" />
     from cst_service
