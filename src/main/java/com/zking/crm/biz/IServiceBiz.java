@@ -1,11 +1,14 @@
 package com.zking.crm.biz;
 
 import com.zking.crm.model.Service;
+import com.zking.crm.util.PageBean;
+
+import java.util.List;
 
 public interface IServiceBiz {
     void addService(Service service);
 
-    void delService(Service service);
+    void delService(Long svrId);
 
     void editZhipai(Service service);
 
@@ -15,11 +18,11 @@ public interface IServiceBiz {
 
     Service loadFuwuguidang(Long svrId);
 
-    Service listStatus1();
+    List<Service> listStatus1(PageBean pageBean);
 
-    Service listStatus2();
+    List<Service> listStatus2();
 
-    Service listStatus3();
+    List<Service> listStatus3();
 
-    Service listStatus4();
+    List<Service> listStatus4();
 }
