@@ -1,7 +1,9 @@
 package com.zking.crm.mapper;
 
 import com.zking.crm.model.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Long usrId);
 
@@ -14,4 +16,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    User login(String usrName);
 }
