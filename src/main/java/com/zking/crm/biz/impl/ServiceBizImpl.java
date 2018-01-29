@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ServiceBizImpl implements IServiceBiz {
     @Autowired
     private ServiceMapper serviceMapper;
+
     @Override
     public void addService(Service service) {
         serviceMapper.insertSelective(service);
