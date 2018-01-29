@@ -84,6 +84,34 @@
   </resultMap>
 
 
+  <resultMap id="qch" type="com.zking.crm.model.Customer" >
+  <constructor >
+    <idArg column="cust_no" jdbcType="CHAR" javaType="java.lang.String" />
+    <arg column="cust_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_region" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_manager_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+    <arg column="cust_manager_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_level" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="cust_level_label" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_satisfy" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="cust_credit" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    <arg column="cust_addr" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_zip" jdbcType="CHAR" javaType="java.lang.String" />
+    <arg column="cust_tel" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_fax" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_website" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_licence_no" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_chieftain" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_bankroll" jdbcType="BIGINT" javaType="java.lang.Long" />
+    <arg column="cust_turnover" jdbcType="BIGINT" javaType="java.lang.Long" />
+    <arg column="cust_bank" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_bank_account" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_local_tax_no" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_national_tax_no" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <arg column="cust_status" jdbcType="CHAR" javaType="java.lang.String" />
+  </constructor>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     cust_no, cust_name, cust_region, cust_manager_id, cust_manager_name, cust_level, 
     cust_level_label, cust_satisfy, cust_credit, cust_addr, cust_zip, cust_tel, cust_fax, 
@@ -127,6 +155,15 @@
     from cst_customer
     where cust_no = #{custNo,jdbcType=CHAR}
   </select>
+
+   <!--qch-->
+  <select id="doLoadSvrCustNo" resultMap="qch"  parameterType="com.zking.crm.model.Customer" >
+    select
+    <include refid="Base_Column_List" />
+    from cst_customer
+    where cust_name = #{custName,jdbcType=VARCHAR}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from cst_customer
     where cust_no = #{custNo,jdbcType=CHAR}
