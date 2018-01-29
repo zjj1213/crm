@@ -127,6 +127,14 @@
     from cst_customer
     where cust_no = #{custNo,jdbcType=CHAR}
   </select>
+
+
+  <select id="doLoadSvrCustNo" resultMap="BaseResultMap" parameterType="com.zking.crm.model.Customer" >
+    select
+    <include refid="Base_Column_List" />
+    from cst_customer
+    where cust_name = #{custName,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from cst_customer
     where cust_no = #{custNo,jdbcType=CHAR}

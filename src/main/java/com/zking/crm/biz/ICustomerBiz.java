@@ -10,6 +10,7 @@ public interface ICustomerBiz {
     //客户信息查全部
     List<Customer> customerlist(Customer customer, PageBean pageBean);
 
-
+    //qch
+    String doLoadSvrCustNo(Customer record);
 
 }

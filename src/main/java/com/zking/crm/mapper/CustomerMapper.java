@@ -31,5 +31,8 @@ public interface CustomerMapper {
 //    List<Customer> customerjwjl(Customer customer);
 
 
+    //qch
+    String doLoadSvrCustNo(Customer record);
+
 
 }
