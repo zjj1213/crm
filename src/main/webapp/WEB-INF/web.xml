@@ -59,11 +59,21 @@
 
 
   <servlet>
-    <servlet-name>goo</servlet-name>
-    <jsp-file>/WEB-INF/jsp/cust/service/add.jsp</jsp-file>
-  </servlet>
+  <servlet-name>goo</servlet-name>
+  <jsp-file>/WEB-INF/jsp/cust/service/add.jsp</jsp-file>
+</servlet>
   <servlet-mapping>
     <servlet-name>goo</servlet-name>
     <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>goo1</servlet-name>
+    <jsp-file>/WEB-INF/jsp/cust/service/dispatch.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>goo1</servlet-name>
+    <url-pattern>/dispatch</url-pattern>
   </servlet-mapping>
 </web-app>
