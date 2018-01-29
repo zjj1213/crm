@@ -7,14 +7,6 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="script/common.js"></script>
 
-    <script type="text/javascript">
-        $('#cc').combobox({
-            url:'',
-            valueField:'id',
-            textField:'text'
-        });
-
-    </script>
 </head>
 <body>
 <div class="page_title">客户服务管理 > 服务分配</div>
@@ -32,11 +24,11 @@
         <th height="28">服务类型</th>
         <td>
             <select id="svrType">
-                <option value="全部">全部</option>
-                <option value="咨询">咨询</option>
-                <option value="建议">建议</option>
-                <option value="投诉">投诉</option>
-            </select>
+            <option value="全部">全部</option>
+            <option value="咨询">咨询</option>
+            <option value="建议">建议</option>
+            <option value="投诉">投诉</option>
+        </select>
         </td>
     </tr>
     <tr>
@@ -60,8 +52,13 @@
      buttons="#dlg-buttons">
     <form id="ff" method="post">
         <div class="fitem">
-            <label>分配给:</label> <input id="cc" name="dept" value="请选择">
+            <label>分配给:</label>
+            <input id="ccc" class="easyui-combobox" name="svrDueId"
+                   data-options="valueField:'id',textField:'text',url:'doListUser',data: [{label: '---请选择---',value: '---请选择---'}]"/>
+            <input id="idd" type="hidden" name="svrId"/>
         </div>
+
+
     </form>
 </div>
 </body>

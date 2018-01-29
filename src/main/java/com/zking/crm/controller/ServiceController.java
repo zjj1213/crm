@@ -2,8 +2,11 @@ package com.zking.crm.controller;
 
 import com.zking.crm.biz.ICustomerBiz;
 import com.zking.crm.biz.IServiceBiz;
+import com.zking.crm.biz.IUserBiz;
 import com.zking.crm.model.Customer;
 import com.zking.crm.model.Service;
+import com.zking.crm.model.TreeNode;
+import com.zking.crm.model.User;
 import com.zking.crm.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ServiceController {
@@ -24,6 +30,10 @@ public class ServiceController {
 
     @Autowired
     private ICustomerBiz customerBiz;
+
+
+    @Autowired
+    private IUserBiz userBiz;
 
 
     @ModelAttribute
@@ -68,11 +78,37 @@ public class ServiceController {
     }
 
 
+    @RequestMapping("/doListUser")
+    @ResponseBody
+    public List<Map<String, Object>> doListUser(HttpServletRequest request) {
+        List<User> usersList = userBiz.doListUser();
+        List<Map<String, Object>> nodes = new ArrayList<Map<String, Object>>();
+        Map<String, Object> node = null;
+        for (User u : usersList) {
+            //节点内置属性
+            node = new HashMap<String, Object>();
+            node.put("id", u.getUsrId());
+            node.put("text", u.getUsrName());
+
+            nodes.add(node);
+        }
+        return nodes;
+    }
+
     @RequestMapping("/delService")
     @ResponseBody
     public String delService(Model model,@ModelAttribute Service service,HttpServletRequest request) {
         serviceBiz.delService(service.getSvrId());
 
         return "";
+    }
+
+    @RequestMapping("/editZhipai")
+    @ResponseBody
+    public String editZhipai(Model model,@ModelAttribute Service service,HttpServletRequest request) {
+        service.setSvrStatus("已分配");
+        serviceBiz.editZhipai(service);
+
+        return "success";
     }
 }

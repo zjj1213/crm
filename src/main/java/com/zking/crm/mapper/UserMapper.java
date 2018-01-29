@@ -3,6 +3,8 @@ package com.zking.crm.mapper;
 import com.zking.crm.model.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Long usrId);
@@ -18,4 +20,7 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User login(String usrName);
+
+    //qch
+    List<User> doListUser();
 }
