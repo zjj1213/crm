@@ -5,8 +5,8 @@
     <%@ include file="/common/head.jsp" %>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="script/common.js"></script>
-    <script type="text/javascript">
 
+    <script type="text/javascript">
         //添加用户信息
         function addObject(){
             alert(9999);
@@ -14,12 +14,6 @@
                 url:'addService'
         });
             $('#fm').form('clear');
-
-//        $('#fm').form({
-//                url:'http://localhost:8080/crm/addService'
-//        });
-//        // submit the form
-//        $('#fm').submit();
         }
     </script>
 </head>
