@@ -3,16 +3,14 @@
 <mapper namespace="com.zking.crm.mapper.ActivityMapper" >
 
   <resultMap id="BaseResultMap" type="com.zking.crm.model.Activity" >
-    <constructor >
-      <idArg column="atv_id" jdbcType="BIGINT" javaType="java.lang.Long" />
-      <arg column="atv_cust_no" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="atv_cust_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="atv_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="atv_place" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="atv_title" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="atv_remark" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="atv_desc" jdbcType="VARCHAR" javaType="java.lang.String" />
-    </constructor>
+      <id column="atv_id" property="atvId" javaType="java.lang.Long" />
+      <result column="atv_cust_no" property="atvCustNo" javaType="java.lang.String" />
+      <result column="atv_cust_name" property="atvCustName" javaType="java.lang.String" />
+      <result column="atv_date" property="atvDate" javaType="java.util.Date" />
+      <result column="atv_place" property="atvPlace" javaType="java.lang.String" />
+      <result column="atv_title" property="atvTitle" javaType="java.lang.String" />
+      <result column="atv_remark" property="atvRemark" javaType="java.lang.String" />
+      <result column="atv_desc" property="atvDesc" javaType="java.lang.String" />
 
     <!--客户信息-->
     <association property="customers" javaType="com.zking.crm.model.Customer">

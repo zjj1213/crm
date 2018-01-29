@@ -1,5 +1,3 @@
-<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
 <html>
 
@@ -8,17 +6,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="script/common.js"></script>
+
+    <script type="text/javascript">
+
+        $('#dg').datagrid({
+            loadFilter: function(data){
+                if (data.q){
+                    return data.q;
+                } else {
+                    return data;
+                }
+            }
+
+        });
+
+
+
+    </script>
+
 </head>
 
-
-<body>
+<body class="easyui-layout" fit="true">
 <div class="page_title">客户信息管理</div>
 <div class="button_bar">
     <button class="common_button" onclick="help('');">帮助</button>
     <button class="common_button" onclick="reload();">查询</button>
 </div>
-
-<f:form modelAttribute="customer" action="kehuxixilist">
 
    <table class="query_form_table">
     <tr>
@@ -57,46 +70,24 @@
         <td>　</td>
     </tr>
 </table>
-<br />
-<table class="data_list_table">
+<br/>
+<div region="center" border="false" style="overflow: hidden;">
+
+<table id="dg" class="data_list_table" data-options="url:'/cust/list',fitColumns:true,singleSelect:true">
+    <thead>
     <tr>
         <th>序号</th>
-        <th>客户编号</th>
-        <th>名称</th>
-        <th>地区</th>
-        <th>客户经理</th>
-        <th>客户等级</th>
+        <th data-options="field:'custNo'">客户编号</th>
+        <th data-options="field:'custName'">名称</th>
+        <th data-options="field:'custRegion'">地区</th>
+        <th data-options="field:'custManagerName'">客户经理</th>
+        <th data-options="field:'custLevelLabel'">客户等级</th>
         <th>操作</th>
     </tr>
-
-    <c:forEach items="${customerList}" var="c">
-        <tr>
-            <td class="list_data_number"></td>
-            <td class=class="list_data_text">${c.custNo}</td>
-            <td class="list_data_ltext">${c.custName}</td>
-            <td class="list_data_text">${c.custRegion}</td>
-            <td class=list_data_text>${c.custManagerName}</td>
-            <td class="list_data_text">${c.custLevelLabel}</td>
-        </tr>
-
-
-    </c:forEach>
-
-    <tr>
-        <td class="list_data_op">
-            <img onclick="to('edit.html');" title="编辑" src="../../images/bt_edit.gif" class="op_button" />
-            <img onclick="to('linkman.html');" title="联系人" src="../../images/bt_linkman.gif" class="op_button" />
-            <img onclick="to('activities.html');" title="交往记录" src="../../images/bt_acti.gif" class="op_button" />
-            <img onclick="to('orders.html');" title="历史订单" src="../../images/bt_orders.gif" class="op_button" />
-            <img onclick="del('“客户：聪海信息科技有限公司”');" title="删除" src="../../images/bt_del.gif" class="op_button" />
-
-        </td>
-    </tr>
-
+    </thead>
    </table>
 
-</f:form>
+</div>
 
 </body>
-
 </html>
