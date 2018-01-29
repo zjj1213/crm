@@ -32,7 +32,7 @@ public interface CustomerMapper {
 
 
     //qch
-    String doLoadSvrCustNo(Customer record);
+    Customer doLoadSvrCustNo(Customer record);
 
 
 }

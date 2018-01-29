@@ -35,7 +35,7 @@ public class CustomerBizImpl implements ICustomerBiz {
 
 
     @Override
-    public String doLoadSvrCustNo(Customer record) {
+    public Customer doLoadSvrCustNo(Customer record) {
         return customerMapper.doLoadSvrCustNo(record);
     }
 }

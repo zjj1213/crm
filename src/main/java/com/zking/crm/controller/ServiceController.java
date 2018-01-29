@@ -1,6 +1,8 @@
 package com.zking.crm.controller;
 
+import com.zking.crm.biz.ICustomerBiz;
 import com.zking.crm.biz.IServiceBiz;
+import com.zking.crm.model.Customer;
 import com.zking.crm.model.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,9 @@ public class ServiceController {
     @Autowired
     private IServiceBiz serviceBiz;
 
+    @Autowired
+    private ICustomerBiz customerBiz;
+
 
     @ModelAttribute
     public void init(Model model, @ModelAttribute Service service) {
@@ -28,10 +33,16 @@ public class ServiceController {
     @RequestMapping("/addService")
     @ResponseBody
     public String addService(Model model,@ModelAttribute Service service,HttpServletRequest request) {
-            System.out.println("addService start");
-        service.setSvrCustNo("t9999");
+        System.out.println("addService start");
+        Customer customer=new Customer();
+        customer.setCustName(service.getSvrCustName());
+        Customer cc = customerBiz.doLoadSvrCustNo(customer);
+        System.out.println(cc+"9999");
+        System.out.println(service.getSvrCustName());
+        service.setSvrCustNo(cc.getCustNo());
+        System.out.println(service.getSvrCustNo());
        // service.setSvrType("咨询");
-        service.setSvrCustName("qch");
+        //service.setSvrCustName("qch");
         //service.setSvrRequest("dfsdf");
         service.setSvrCreateId(Long.valueOf(2));
         service.setSvrCreateBy("黄师傅");

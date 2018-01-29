@@ -11,6 +11,6 @@ public interface ICustomerBiz {
     List<Customer> customerlist(Customer customer, PageBean pageBean);
 
     //qch
-    String doLoadSvrCustNo(Customer record);
+    Customer doLoadSvrCustNo(Customer record);
 
 }
