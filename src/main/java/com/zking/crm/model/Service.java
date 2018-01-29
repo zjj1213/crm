@@ -1,42 +1,59 @@
 package com.zking.crm.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 
 public class Service {
+
     private Long svrId;
 
     private String svrType;
 
     private String svrTitle;
 
+    @JsonIgnore
     private String svrCustNo;
 
     private String svrCustName;
 
+    @JsonIgnore
     private String svrStatus;
 
+    @JsonIgnore
     private String svrRequest;
 
+    @JsonIgnore
     private Long svrCreateId;
 
     private String svrCreateBy;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date svrCreateDate;
 
+    @JsonIgnore
     private String svrDueId;
 
+    @JsonIgnore
     private String svrDueTo;
 
+    @JsonIgnore
     private Date svrDueDate;
 
+    @JsonIgnore
     private String svrDeal;
 
+    @JsonIgnore
     private Long svrDealId;
 
+    @JsonIgnore
     private Date svrDealDate;
 
+    @JsonIgnore
     private String svrResult;
 
+    @JsonIgnore
     private Integer svrSatisfy;
 
     public Service(Long svrId, String svrType, String svrTitle, String svrCustNo, String svrCustName, String svrStatus, String svrRequest, Long svrCreateId, String svrCreateBy, Date svrCreateDate, String svrDueId, String svrDueTo, Date svrDueDate, String svrDeal, Long svrDealId, Date svrDealDate, String svrResult, Integer svrSatisfy) {

@@ -3,6 +3,8 @@ package com.zking.crm.mapper;
 import com.zking.crm.model.Service;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ServiceMapper {
     int deleteByPrimaryKey(Long svrId);
@@ -18,11 +20,11 @@ public interface ServiceMapper {
     int updateByPrimaryKey(Service record);
 
 
-    Service listStatus1();
+    List<Service> listStatus1();
 
-    Service listStatus2();
+    List<Service> listStatus2();
 
-    Service listStatus3();
+    List<Service> listStatus3();
 
-    Service listStatus4();
+    List<Service> listStatus4();
 }
