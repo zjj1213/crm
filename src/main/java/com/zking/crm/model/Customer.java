@@ -1,5 +1,7 @@
 package com.zking.crm.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,45 +11,45 @@ public class Customer {
     private String custName;
 
     private String custRegion;
-
+    @JsonIgnore
     private Long custManagerId;
 
     private String custManagerName;
-
+    @JsonIgnore
     private Integer custLevel;
 
     private String custLevelLabel;
-
+    @JsonIgnore
     private Integer custSatisfy;
-
+    @JsonIgnore
     private Integer custCredit;
-
+    @JsonIgnore
     private String custAddr;
-
+    @JsonIgnore
     private String custZip;
-
+    @JsonIgnore
     private String custTel;
-
+    @JsonIgnore
     private String custFax;
-
+    @JsonIgnore
     private String custWebsite;
-
+    @JsonIgnore
     private String custLicenceNo;
-
+    @JsonIgnore
     private String custChieftain;
-
+    @JsonIgnore
     private Long custBankroll;
-
+    @JsonIgnore
     private Long custTurnover;
-
+    @JsonIgnore
     private String custBank;
-
+    @JsonIgnore
     private String custBankAccount;
-
+    @JsonIgnore
     private String custLocalTaxNo;
-
+    @JsonIgnore
     private String custNationalTaxNo;
-
+    @JsonIgnore
     private String custStatus;
 
 
