@@ -16,6 +16,9 @@ public interface ICustomerBiz {
     //客户信息修改-修改
     void editCustomer(Customer customer);
 
+    //客户信息删除
+    void del(Customer customer);
+
 
     //qch
     Customer doLoadSvrCustNo(Customer record);

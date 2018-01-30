@@ -78,4 +78,18 @@
     <url-pattern>/list</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>zj</servlet-name>
+    <jsp-file>/WEB-INF/jsp/cust/edit.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zj</servlet-name>
+    <url-pattern>/edit</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+
 </web-app>

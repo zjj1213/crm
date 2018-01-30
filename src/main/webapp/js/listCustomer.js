@@ -39,6 +39,7 @@ $(function () {
                 iconCls:'icon-edit',
                 handler:function(){
                    alert("客服信息修改")
+                    parent.doOpenTab('修改','/edit')
                 }
             },'-',{
                 text:'联系人',
@@ -63,6 +64,7 @@ $(function () {
                 iconCls:"icon-remove",
                 handler:function () {
                     alert("删除")
+                    parent.doOpenTab('字典修改','/add');
                 }
             }
         ]

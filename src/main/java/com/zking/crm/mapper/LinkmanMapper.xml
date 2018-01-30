@@ -3,7 +3,6 @@
 
 <mapper namespace="com.zking.crm.mapper.LinkmanMapper" >
   <resultMap id="BaseResultMap" type="com.zking.crm.model.Linkman" >
-
      <id column="lkm_id" property="lkmId" javaType="java.lang.Long" />
       <result column="lkm_cust_no" property="lkmCustNo" javaType="java.lang.String" />
       <result column="lkm_cust_name" property="lkmCustName" javaType="java.lang.String" />
@@ -40,8 +39,34 @@
       <result column="cust_national_tax_no" property="custNationalTaxNo" javaType="java.lang.String" />
       <result column="cust_status" property="custStatus" javaType="java.lang.String" />
     </association>
-
   </resultMap>
+
+  <resultMap id="n1n" type="com.zking.crm.model.Linkman">
+    <id column="lkm_id" property="lkmId" javaType="java.lang.Long" />
+    <result column="lkm_cust_no" property="lkmCustNo" javaType="java.lang.String" />
+    <result column="lkm_cust_name" property="lkmCustName" javaType="java.lang.String" />
+    <result column="lkm_name" property="lkmName" javaType="java.lang.String" />
+    <result column="lkm_sex" property="lkmSex" javaType="java.lang.String" />
+    <result column="lkm_postion" property="lkmPostion" javaType="java.lang.String" />
+    <result column="lkm_tel" property="lkmTel" javaType="java.lang.String" />
+    <result column="lkm_mobile" property="lkmMobile" javaType="java.lang.String" />
+    <result column="lkm_memo" property="lkmMemo" javaType="java.lang.String" />
+  </resultMap>
+
+
+  <select id="customerload" resultMap="BaseResultMap" resultType="com.zking.crm.model.Linkman">
+    SELECT l.lkm_id,l.lkm_cust_no,l.lkm_cust_name,l.lkm_name,l.lkm_sex,l.lkm_postion,l.lkm_tel,
+    l.lkm_mobile,l.lkm_memo,u.cust_no,u.cust_name
+    FROM cst_linkman l LEFT JOIN cst_customer u ON l.lkm_cust_no=u.cust_no
+    WHERE u.cust_no=#{custNo,jdbcType=CHAR}
+  </select>
+
+  <select id="load" resultMap="n1n" resultType="com.zking.crm.model.Linkman">
+   SELECT *
+   FROM cst_linkman
+   WHERE lkm_id=#{lkmId,jdbcType=BIGINT}
+  </select>
+
 
   <sql id="Base_Column_List" >
     lkm_id, lkm_cust_no, lkm_cust_name, lkm_name, lkm_sex, lkm_postion, lkm_tel, lkm_mobile, 

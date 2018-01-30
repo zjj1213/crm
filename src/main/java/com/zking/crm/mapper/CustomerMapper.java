@@ -24,12 +24,6 @@ public interface CustomerMapper {
     //客户信息修改-查单个
     Customer load(Customer customer);
 
-//    //客户信息-联系人
-//    List<Customer> customerlxr(Customer customer);
-//
-//    //客户信息-交往记录
-//    List<Customer> customerjwjl(Customer customer);
-
 
     //qch
     Customer doLoadSvrCustNo(Customer record);

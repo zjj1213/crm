@@ -8,24 +8,24 @@
     <script src="script/common.js"></script>
     <script src="js/listCustomer.js"></script>
 
-    <script type="text/javascript">
-        var contextPath="<%=request.getContextPath()%>";
-        function doOpenTab(text,href){
-            href=contextPath+href;
-            if(!$('#t1').tabs('exists',text)){
-                href+="?ts="+new Date().getTime();
-                var content ='<iframe scrolling="no" frameborder="0" src="'+href+'" style="width:99%;height:99%;"></iframe>';
-                $('#t1').tabs('add',{
-                    title:text,
-                    selected:true,
-                    closable:true,
-                    content:content
-                });
-            }else{
-                $('#t1').tabs('select',text);
-            }
-        }
-    </script>
+    <%--<script type="text/javascript">--%>
+    <%--var contextPath="<%=request.getContextPath()%>";--%>
+    <%--function doOpenTab(text,href){--%>
+        <%--href=contextPath+href;--%>
+        <%--if(!$('#t1').tabs('exists',text)){--%>
+            <%--href+="?ts="+new Date().getTime();--%>
+            <%--var content ='<iframe scrolling="no" frameborder="0" src="'+href+'" style="width:99%;height:99%;"></iframe>';--%>
+            <%--$('#t1').tabs('add',{--%>
+                <%--title:text,--%>
+                <%--selected:true,--%>
+                <%--closable:true,--%>
+                <%--content:content--%>
+            <%--});--%>
+        <%--}else{--%>
+            <%--$('#t1').tabs('select',text);--%>
+        <%--}--%>
+    <%--}--%>
+<%--</script>--%>
 
 </head>
 

@@ -46,9 +46,20 @@ public class CustomerBizImpl implements ICustomerBiz {
         customerMapper.updateByPrimaryKeySelective(customer);
     }
 
+    //客户信息删除
+    @Override
+    public void del(Customer customer) {
+        customerMapper.deleteByPrimaryKey(customer.getCustNo());
+    }
+
     //qch
     @Override
     public Customer doLoadSvrCustNo(Customer record) {
         return customerMapper.doLoadSvrCustNo(record);
     }
+
+
+
+
+
 }
