@@ -47,6 +47,9 @@ public class UserController {
         String msg = null;
         User u = userBiz.login(user);
         System.out.println("u=" + u);
+
+
+
         RequestContext requestContext = new RequestContext(request);
 
         if (null == u) {
@@ -54,7 +57,7 @@ public class UserController {
             errors.rejectValue("usrName", null, msg);
         } else if (!u.getUsrPassword().equals(user.getUsrPassword())) {
             msg = "密码错误";
-            errors.rejectValue("srPassword", null, msg);
+            errors.rejectValue("usrPassword", null, msg);
         }
         if (null != msg) {
             return "login";
@@ -65,7 +68,7 @@ public class UserController {
 //            }
         session.setAttribute("user", u);
         session.getServletContext().setAttribute("user", u);
-        return "index";
+        return "redirect:/index2";
     }
 
 

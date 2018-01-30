@@ -1,5 +1,5 @@
 <html>
 <body>
-<jsp:forward page="/toIndex"></jsp:forward>
+<jsp:forward page="/toLogin"></jsp:forward>
 </body>
 </html>
