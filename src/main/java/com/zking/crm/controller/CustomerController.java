@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -29,13 +28,13 @@ public class CustomerController {
 
      //查询客户信息
     @ResponseBody
-    @RequestMapping(value="/cust/kehuxixilist",method = RequestMethod.POST)
+    @RequestMapping("/cust/kehuxixilist")
     public List<Customer> kehuxixilist(@ModelAttribute Customer customer, Model model, PageBean pageBean){
         customer.setCustStatus("1");
-        List<Customer> customerList = customerBiz.customerlist(customer,pageBean);
-        model.addAttribute("customerList",customerList);
+        List<Customer> kehuxixilist = customerBiz.customerlist(customer,pageBean);
+        model.addAttribute("kehuxixilist",kehuxixilist);
 
-        return customerList;
+        return kehuxixilist;
    }
 
 

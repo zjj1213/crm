@@ -1,6 +1,7 @@
 $(function () {
     $('#dg').datagrid({
         toolbar : '#tb',
+
         pagination : true,
         pageList : [ 2, 4, 6, 8 ],
         pageSize : 2,
@@ -8,7 +9,7 @@ $(function () {
 
         singleSelect : true,
         fit : false,
-        url : 'customerList',
+        url : 'cust/kehuxixilist',
 
         columns : [ [{
             field : 'custNo',
@@ -31,7 +32,6 @@ $(function () {
             title : '客户等级',
             width : '16%'
         } ] ]
-
     });
 
 });

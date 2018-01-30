@@ -54,8 +54,9 @@ public class Customer {
 
 
     //联系人表
+    @JsonIgnore
     private List<Linkman> linkmanList = new ArrayList<Linkman>();
-
+    @JsonIgnore
     //交往记录表
     private List<Activity> activityList = new ArrayList<Activity>();
 

@@ -10,7 +10,8 @@
 
 </head>
 
-<body class="easyui-layout" fit="true">
+<body>
+
 <div class="page_title">客户信息管理</div>
 
 <div class="button_bar">
@@ -56,11 +57,8 @@
     </tr>
 </table>
 <br/>
-<div region="center" border="false" style="overflow: hidden;">
 
 <table id="dg"></table>
-
-</div>
 
 </body>
 </html>
