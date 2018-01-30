@@ -16,7 +16,7 @@ public class CustomerBizImpl implements ICustomerBiz {
     @Autowired
     private CustomerMapper customerMapper;
 
-
+    //客户信息查全部
     @Override
     public List<Customer> customerlist(Customer customer, PageBean pageBean) {
 
@@ -33,7 +33,20 @@ public class CustomerBizImpl implements ICustomerBiz {
             return customerlist;
     }
 
+    //客户信息修改-查单个
+    @Override
+    public Customer load(Customer customer) {
+        return customerMapper.load(customer);
+    }
 
+
+    //客户信息修改-修改
+    @Override
+    public void editCustomer(Customer customer) {
+        customerMapper.updateByPrimaryKeySelective(customer);
+    }
+
+    //qch
     @Override
     public Customer doLoadSvrCustNo(Customer record) {
         return customerMapper.doLoadSvrCustNo(record);

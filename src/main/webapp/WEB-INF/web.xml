@@ -78,6 +78,4 @@
     <url-pattern>/list</url-pattern>
   </servlet-mapping>
 
-
-
 </web-app>

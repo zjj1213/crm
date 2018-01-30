@@ -31,7 +31,50 @@ $(function () {
             field : 'custLevelLabel',
             title : '客户等级',
             width : '16%'
-        } ] ]
+        }] ],
+
+        toolbar:[
+            {
+                text:'修改',
+                iconCls:'icon-edit',
+                handler:function(){
+                   alert("客服信息修改")
+                }
+            },'-',{
+                text:'联系人',
+                iconCls : "op_button",
+                handler : function() {
+                    alert("联系人")
+                }
+            },'-',{
+              text:'交往记录',
+                iconCls:"op_button",
+                handler:function () {
+                    alert("交往记录")
+                }
+            },'-',{
+                text:'历史订单',
+                iconCls:"op_button",
+                handler:function () {
+                    alert("交往记录")
+                }
+            },'-',{
+                text:'删除',
+                iconCls:"icon-remove",
+                handler:function () {
+                    alert("删除")
+                }
+            }
+        ]
+
+
     });
+
+
+
+
+
+
+
 
 });

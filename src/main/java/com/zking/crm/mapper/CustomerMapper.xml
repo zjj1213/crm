@@ -147,6 +147,13 @@
   </select>
 
 
+  <select id="load" resultMap="c1c" resultType="com.zking.crm.model.Customer">
+   SELECT *
+   FROM cst_customer
+   WHERE custNo=#{custNo,jdbcType=CHAR}
+  </select>
+
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
