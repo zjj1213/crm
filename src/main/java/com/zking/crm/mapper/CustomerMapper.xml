@@ -150,7 +150,7 @@
   <select id="load" resultMap="c1c" resultType="com.zking.crm.model.Customer">
    SELECT *
    FROM cst_customer
-   WHERE custNo=#{custNo,jdbcType=CHAR}
+   WHERE cust_no =#{custNo,jdbcType=CHAR} and cust_Status = #{custStatus,jdbcType=CHAR}
   </select>
 
 
