@@ -38,12 +38,35 @@
       <result column="cust_national_tax_no" property="custNationalTaxNo" javaType="java.lang.String" />
       <result column="cust_status" property="custStatus" javaType="java.lang.String" />
     </association>
+  </resultMap>
 
+  <resultMap id="a1a" type="com.zking.crm.model.Activity">
+    <id column="atv_id" property="atvId" javaType="java.lang.Long" />
+    <result column="atv_cust_no" property="atvCustNo" javaType="java.lang.String" />
+    <result column="atv_cust_name" property="atvCustName" javaType="java.lang.String" />
+    <result column="atv_date" property="atvDate" javaType="java.util.Date" />
+    <result column="atv_place" property="atvPlace" javaType="java.lang.String" />
+    <result column="atv_title" property="atvTitle" javaType="java.lang.String" />
+    <result column="atv_remark" property="atvRemark" javaType="java.lang.String" />
+    <result column="atv_desc" property="atvDesc" javaType="java.lang.String" />
   </resultMap>
 
   <sql id="Base_Column_List" >
     atv_id, atv_cust_no, atv_cust_name, atv_date, atv_place, atv_title, atv_remark, atv_desc
   </sql>
+
+
+  <select id="customerload2" resultMap="BaseResultMap" resultType="com.zking.crm.model.Activity">
+    SELECT a.atv_id,a.atv_cust_no,a.atv_cust_name,a.atv_date,a.atv_place,a.atv_title,a.atv_remark,a.atv_desc,u.cust_no,u.cust_name
+    FROM cst_activity a LEFT JOIN cst_customer u ON a.atv_cust_no=u.cust_no and a.atv_cust_name=u.cust_name
+    WHERE u.cust_no=#{custNo,jdbcType=CHAR}
+  </select>
+
+  <select id="load" resultMap="a1a" resultType="com.zking.crm.model.Activity">
+  SELECT *
+  FROM cst_activity
+  WHERE atv_id=#{atvId,jdbcType=BIGINT}
+  </select>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 

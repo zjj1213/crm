@@ -12,11 +12,17 @@ public interface ILinkmanBiz {
     //查单个
     Linkman load(Linkman linkman);
 
+    //新增
+    void add(Linkman linkman);
+
     //修改
     void editlinkman(Linkman linkman);
 
     //删除
     void del(Linkman linkman);
+
+
+
 
 
 

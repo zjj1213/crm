@@ -26,6 +26,12 @@ public class LinkmanBizImpl implements ILinkmanBiz {
     }
 
 
+    //联系人新增
+    @Override
+    public void add(Linkman linkman) {
+        linkmanMapper.insertSelective(linkman);
+    }
+
     //联系人修改
     @Override
     public void editlinkman(Linkman linkman) {
