@@ -58,7 +58,7 @@ $(function() {
                     if(row){
                         //updateVip(row['vid']);
                         //alert(row.vid);
-
+                        $('#idd').val(row.svrId);
                         $("#dlg").show();
                         $("#dlg").dialog({
                             title: '分配',
@@ -71,14 +71,10 @@ $(function() {
                                 text : '分配',
                                 handler : function() {
                                     $("#ff").form('submit', {
-                                        url:'updateStock.action',
-                                        onSubmit: function(){
-                                            var isValid = $("#stockUpdateForm").form('validate');
-                                            return isValid;
-                                        },
+                                        url:'editZhipai',
                                         success: function(data){
                                             if(data=='success'){
-
+                                                $('#dg').datagrid("load");
                                                 $("#dlg").dialog('close');
                                             }
                                         }

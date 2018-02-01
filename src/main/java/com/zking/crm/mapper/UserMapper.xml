@@ -11,6 +11,14 @@
     </constructor>
   </resultMap>
 
+  <resultMap id="qch" type="com.zking.crm.model.User" >
+      <id column="usr_id" property="usrId" javaType="java.lang.Long" />
+      <result column="usr_name" property="usrName" javaType="java.lang.String" />
+      <result column="usr_password" property="usrPassword" javaType="java.lang.String" />
+      <result column="usr_role_id" property="usrRoleId" javaType="java.lang.Long" />
+      <result column="usr_flag" property="usrFlag" javaType="java.lang.Integer" />
+  </resultMap>
+
   <resultMap id="login" type="com.zking.crm.model.User" >
     <constructor >
       <idArg column="usr_id" jdbcType="BIGINT" javaType="java.lang.Long" />
@@ -35,6 +43,14 @@
     from sys_user
     where usr_name = #{usrName,jdbcType=VARCHAR}
   </select>
+
+  <select id="doListUser" resultMap="qch" >
+    select
+    <include refid="Base_Column_List" />
+    from sys_user
+    where usr_role_id = 2 and usr_flag = 1
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from sys_user
     where usr_id = #{usrId,jdbcType=BIGINT}
