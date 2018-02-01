@@ -46,6 +46,7 @@ $(function () {
                 iconCls : "op_button",
                 handler : function() {
                     alert("联系人")
+                    parent.doOpenTab('联系人','/linkman')
                 }
             },'-',{
               text:'交往记录',

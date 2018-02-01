@@ -87,7 +87,14 @@
     <url-pattern>/edit</url-pattern>
   </servlet-mapping>
 
-
+  <servlet>
+    <servlet-name>z</servlet-name>
+    <jsp-file>/WEB-INF/jsp/cust/linkman.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>z</servlet-name>
+    <url-pattern>/linkman</url-pattern>
+  </servlet-mapping>
 
 
 
