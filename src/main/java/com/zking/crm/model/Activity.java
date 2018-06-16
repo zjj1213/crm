@@ -23,7 +23,6 @@ public class Activity {
     //客户信息表
     private  Customer customers;
 
-
     public Activity(Long atvId, String atvCustNo, String atvCustName, Date atvDate, String atvPlace, String atvTitle, String atvRemark, String atvDesc) {
         this.atvId = atvId;
         this.atvCustNo = atvCustNo;

@@ -13,6 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.support.RequestContext;
+import sun.applet.Main;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -28,8 +29,8 @@ public class UserController {
         User user = new User();
         model.addAttribute("user", user);
         System.out.println("init");
-
     }
+
 
     @RequestMapping("/toLogin")
     public String toLogin(Model model) {
