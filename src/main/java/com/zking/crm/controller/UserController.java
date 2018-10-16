@@ -31,7 +31,6 @@ public class UserController {
         System.out.println("init");
     }
 
-
     @RequestMapping("/toLogin")
     public String toLogin(Model model) {
         return "login";
