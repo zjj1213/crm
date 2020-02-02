@@ -19,8 +19,7 @@ public interface CustomerMapper {
     int updateByPrimaryKey(Customer record);
 
     //客户信息查全部
-    List<Customer> customerlist(Customer customer);
-
+      List<Customer> customerlist(Customer customer);
     //客户信息修改-查单个
     Customer load(Customer customer);
 
