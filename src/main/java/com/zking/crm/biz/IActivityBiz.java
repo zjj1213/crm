@@ -17,6 +17,12 @@ public interface IActivityBiz {
 
     //历史记录-修改
     void edit(Activity activity);
+	
+	
+	
+	
+	
+	
 
     //历史记录-删除
     void del(Activity activity);
