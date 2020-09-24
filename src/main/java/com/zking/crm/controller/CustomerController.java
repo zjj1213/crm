@@ -33,7 +33,7 @@ public class CustomerController {
         customer.setCustStatus("1");
         List<Customer> kehuxixilist = customerBiz.customerlist(customer,pageBean);
         model.addAttribute("kehuxixilist",kehuxixilist);
-
+        System.out.println("111111111");
         return kehuxixilist;
    }
 

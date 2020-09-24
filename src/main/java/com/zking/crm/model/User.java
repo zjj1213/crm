@@ -11,6 +11,7 @@ public class User {
 
     private Integer usrFlag;
 
+
     public User(Long usrId, String usrName, String usrPassword, Long usrRoleId, Integer usrFlag) {
         this.usrId = usrId;
         this.usrName = usrName;
@@ -22,6 +23,9 @@ public class User {
     public User() {
         super();
     }
+
+
+
 
     public Long getUsrId() {
         return usrId;
